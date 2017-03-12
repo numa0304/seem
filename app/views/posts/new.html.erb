@@ -1,0 +1,6 @@
+<h1>新規投稿</h1>
+<%= form_for (@post) do |f| %>
+  <h2>本文</h2>
+  <%= f.text_field :text %>
+  <%= f.submit "保存する" %>
+<% end %>

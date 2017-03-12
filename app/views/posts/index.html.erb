@@ -1,0 +1,4 @@
+<h1>投稿一覧</h1>
+<% @posts.each do |post| %>
+  <span><%= link_to post.text, post_path(post.id) %></span>
+<% end %>
