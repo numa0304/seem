@@ -6,6 +6,14 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.text = params[:text]
     @post.save 
-    redirect_to new_post_path
+    redirect_to post_path(@post.id)
+  end
+
+  def index
+    @posts = Post.all
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 end
