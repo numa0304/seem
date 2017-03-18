@@ -1,24 +1,16 @@
-<h2>新規登録</h2>
+<h2>学生新規登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-
-
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :Eメール %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :名前 %><br />
     <%= f.text_field :name %>
-  </div>
-
-  <div>
-    <%= f.label :gender %>
-    <%= f.radio_button :gender, 1 %>男
-    <%= f.radio_button :gender, 2 %>女<br />
   </div>
 
   <div class="field">
@@ -32,11 +24,11 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>registrations
+  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "students/shared/links" %>

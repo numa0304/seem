@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318041403) do
+ActiveRecord::Schema.define(version: 20170318065035) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20170318041403) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "company_name"
+    t.string   "human_resources"
     t.index ["email"], name: "index_companies_on_email", unique: true
     t.index ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true
   end
@@ -41,6 +43,41 @@ ActiveRecord::Schema.define(version: 20170318041403) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "name"
+    t.string   "gender"
+    t.string   "grade"
+    t.string   "school"
+    t.string   "undergraduate"
+    t.string   "self_introduction"
+    t.string   "work_location"
+    t.string   "hobby"
+    t.string   "birthplace"
+    t.string   "job_category"
+    t.string   "circle"
+    t.string   "seminar"
+    t.string   "high_school"
+    t.string   "part_time_job"
+    t.string   "club"
+    t.string   "department"
+    t.string   "profile_image"
+    t.date     "birthday"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_students_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
   create_table "tags", force: :cascade do |t|
