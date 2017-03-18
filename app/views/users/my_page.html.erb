@@ -21,6 +21,10 @@
       <%= link_to "プロフィール編集", edit_user_registration_path %>
     <% else %>
     <h1>seem</h1>
-      <%= link_to "新規登録", new_user_registration_path %> |
-      <%= link_to "ログイン", new_user_session_path %>
+      <span>学生</span>
+      <%= link_to "新規登録", new_students_registration_path %> |
+      <%= link_to "ログイン", new_students_session_path %>
+      <span>人事担当</span>
+      <%= link_to "新規登録", new_company_registration_path %> |
+      <%= link_to "ログイン", new_company_session_path %>
     <% end %>
