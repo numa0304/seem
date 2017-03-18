@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170304115144) do
+ActiveRecord::Schema.define(version: 20170315131820) do
 
   create_table "images", force: :cascade do |t|
     t.string   "url"
@@ -20,10 +20,11 @@ ActiveRecord::Schema.define(version: 20170304115144) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "text"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "text"
+    t.string   "image"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170304115144) do
     t.date     "birthday"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

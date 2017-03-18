@@ -31,7 +31,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       # t.datetime :locked_at
 
       t.string :name
-      t.string :gender
+      t.integer :gender
       t.string :grade
       t.string :school
       t.string :undergraduate

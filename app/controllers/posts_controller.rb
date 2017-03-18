@@ -5,9 +5,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.save 
-    redirect_to @post
+    @post = Post.new
+    @post.text = params[:text]
+    @post.save
+    redirect_to root_path
   end
 
   def index
@@ -29,7 +30,14 @@ private
   def set_post
     @post = Post.find(params[:id])
   end
-  def post_params
-    params.require(:post).permit(:text)
+  # def post_params
+  #   params.require(:post).permit(:text, :image, :user_id,)
+  # end
+
+  def correct_user
+	post = Post.find(params[:id])
+	if current_user.id != post.user.id
+	  redirect_to root_path
+	end
   end
 end

@@ -9,6 +9,11 @@
     <%= f.text_field :name %>
   </div>
 
+  <%= form_for @user,:url => {:action => 'update'}, :html => {:multipart => true} do |f| %>
+   <%= f.file_field :image %><br>
+   <%= f.submit %>
+  <% end %>
+
   <div>
   <%= f.label :gender %>
   <%= f.radio_button :gender, 1 %>男

@@ -1,6 +1,9 @@
 <h1>新規投稿</h1>
-<%= form_for (@post) do |f| %>
+<%= form_for posts_path, :url => {:action => 'create'} do |f| %>
   <h2>本文</h2>
+  <%= f.label :text %>
   <%= f.text_field :text %>
+  <%= f.label :image %>
+  <%= f.file_field :image %> 
   <%= f.submit "保存する" %>
 <% end %>
