@@ -1,7 +1,19 @@
+<% if student_signed_in? %>
+  Logged in as <%= current_student.email %>
+  <%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
+<% else %>
 <h1>seem</h1>
 <span>学生</span>
 <%= link_to "新規登録", new_student_registration_path %> |
 <%= link_to "ログイン", new_student_session_path %>
+<% end %>
+
+<% if company_signed_in? %>
+  Logged in as <%= current_company.email %>
+  <%= link_to "ログアウト", destroy_company_session_path, method: :delete %>
+<% else %>
 <span>人事担当</span>
 <%= link_to "新規登録", new_company_registration_path %> |
 <%= link_to "ログイン", new_company_session_path %>
+
+<% end %>
