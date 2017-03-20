@@ -1,34 +1,58 @@
-    <% if user_signed_in? %>
-      <%= current_user.name %>
-      <%= current_user.grade %>
-      <%= current_user.school %>
-      <%= current_user.undergraduate %>
-      <%= current_user.self_introduction %>
-      <%= current_user.work_location %>
-      <%= current_user.hobby %>
-      <%= current_user.birthplace %>
-      <%= current_user.job_category %>
-      <%= current_user.circle %>
-      <%= current_user.seminar %>
-      <%= current_user.high_school %>
-      <%= current_user.club %>
-      <%= current_user.department %>
-      <%= current_user.profile_image %>
-      <%= current_user.birthday %>
-      <%= current_user.part_time_job %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <%= link_to "ユーザーのおともだち", users_path %>
-      <%= link_to "プロフィール編集", edit_user_registration_path %>
-      <%= link_to "新規投稿", new_post_path %>
-      <%= qrcode_tag request.url, module_size: 5 %>
-      <%= current_user.image %>
- 
-    <% else %>
-    <h1>seem</h1>
-      <span>学生</span>
-      <%= link_to "新規登録", new_students_registration_path %> |
-      <%= link_to "ログイン", new_students_session_path %>
-      <span>人事担当</span>
-      <%= link_to "新規登録", new_company_registration_path %> |
-      <%= link_to "ログイン", new_company_session_path %>
-    <% end %>
+<h1>seem</h1>
+<% if student_signed_in? %>
+  <%= current_student.name %>
+  <%= current_student.grade %>
+  <%= current_student.school %>
+  <%= current_student.undergraduate %>
+  <%= current_student.self_introduction %>
+  <%= current_student.work_location %>
+  <%= current_student.hobby %>
+  <%= current_student.birthplace %>
+  <%= current_student.job_category %>
+  <%= current_student.circle %>
+  <%= current_student.seminar %>
+  <%= current_student.high_school %>
+  <%= current_student.club %>
+  <%= current_student.department %>
+  <%= current_student.profile_image %>
+  <%= current_student.birthday %>
+  <%= current_student.part_time_job %>
+  <%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
+  <%= link_to "プロフィール編集", edit_student_registration_path %>
+  <%= link_to "新規投稿", new_post_path %>
+  <%= qrcode_tag request.url, module_size: 5 %>
+  <%= current_student.posts %>
+<% else %>
+  <span>学生</span>
+  <%= link_to "新規登録", new_student_registration_path %> |
+  <%= link_to "ログイン", new_student_session_path %>
+<% end %>
+
+<% if company_signed_in? %>
+  <%= current_company.name %>
+  <%= current_company.grade %>
+  <%= current_company.school %>
+  <%= current_company.undergraduate %>
+  <%= current_company.self_introduction %>
+  <%= current_company.work_location %>
+  <%= current_company.hobby %>
+  <%= current_company.birthplace %>
+  <%= current_company.job_category %>
+  <%= current_company.circle %>
+  <%= current_company.seminar %>
+  <%= current_company.high_school %>
+  <%= current_company.club %>
+  <%= current_company.department %>
+  <%= current_company.profile_image %>
+  <%= current_company.birthday %>
+  <%= current_company.part_time_job %>
+  <%= link_to "ログアウト", destroy_company_session_path, method: :delete %>
+  <%= link_to "プロフィール編集", edit_company_registration_path %>
+  <%= link_to "新規投稿", new_post_path %>
+  <%= qrcode_tag request.url, module_size: 5 %>
+  <%= current_company.posts %>
+<% else %>   
+  <span>人事担当</span>
+  <%= link_to "新規登録", new_company_registration_path %> |
+  <%= link_to "ログイン", new_company_session_path %>
+<% end %>
