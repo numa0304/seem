@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only:[:show, :edit, :destroy]
+  before_action :authenticate_user!
   def new
     @post = Post.new
   end
