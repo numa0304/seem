@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318065035) do
+ActiveRecord::Schema.define(version: 20170320065352) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -39,11 +39,13 @@ ActiveRecord::Schema.define(version: 20170318065035) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.string   "text"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "text"
     t.string   "image"
+    t.integer  "student_id"
+    t.integer  "company_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -100,7 +102,7 @@ ActiveRecord::Schema.define(version: 20170318065035) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
-    t.string   "gender"
+    t.integer  "gender"
     t.string   "grade"
     t.string   "school"
     t.string   "undergraduate"
