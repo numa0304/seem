@@ -17,6 +17,6 @@
 <%= current_student.birthday %>
 <%= current_student.part_time_job %>
 <%= link_to "プロフィール編集", edit_student_registration_path %>
-<%= link_to "新規投稿", new_post_path %>
+<%= link_to "新規投稿", '/posts/new' %>
 <%= qrcode_tag request.url, module_size: 5 %>
 <%= link_to "ログアウト", destroy_student_session_path, method: :delete %>

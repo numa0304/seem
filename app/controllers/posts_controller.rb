@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :set_post, only:[:show, :edit, :destroy]
-  before_action :authenticate_user!
   def new
     @post = Post.new
   end
@@ -8,8 +7,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new
     @post.text = params[:text]
+    @post.image = params[:image]
     @post.save
-    redirect_to root_path
+    redirect_to posts_path
   end
 
   def index
@@ -31,9 +31,10 @@ private
   def set_post
     @post = Post.find(params[:id])
   end
-  # def post_params
-  #   params.require(:post).permit(:text, :image, :user_id,)
-  # end
+
+  def post_params
+    params.require(:post).permit(:text, :image, :company_id, :student_id)
+  end
 
   def correct_user
 	post = Post.find(params[:id])
