@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   root to: "home#top"
   get '/students/mypage' => 'students#my_page'
   get '/companies/mypage' => 'companies#my_page'
-  resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   
@@ -21,7 +20,6 @@ Rails.application.routes.draw do
   # post '/students/posts' => 'posts#create'
   # get '/posts/new' => 'posts#new'
   # post '/posts' => 'posts#create'
-
   resources :posts
 
 end
