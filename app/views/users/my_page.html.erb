@@ -16,27 +16,25 @@
       <%= current_student.profile_image %>
       <%= current_student.birthday %>
       <%= current_student.part_time_job %>
-      <%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
       <%= link_to "プロフィール編集", edit_student_registration_path %>
       <%= link_to "新規投稿", new_post_path %>
       <%= qrcode_tag request.url, module_size: 5 %>
       <%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
 
     <% elsif company_signed_in? %>
-      <%= current_company.name %>
-      <%= link_to "ログアウト", destroy_company_session_path, method: :delete %>
+      <%= current_company.company_name %>
+      <%= current_company.human_resources %>
       <%= link_to "プロフィール編集", edit_company_registration_path %>
       <%= link_to "新規投稿", new_post_path %>
       <%= qrcode_tag request.url, module_size: 5 %>
-      <%= current_company.image %>
       <%= link_to "ログアウト", destroy_company_session_path, method: :delete %>
  
-      <% else %>
+    <% else %>
       <h1>seem</h1>
         <span>学生</span>
-        <%= link_to "新規登録", new_students_registration_path %> |
-        <%= link_to "ログイン", new_students_session_path %>
+        <%= link_to "新規登録", new_student_registration_path %> |
+        <%= link_to "ログイン", new_student_session_path %>
         <span>人事担当</span>
         <%= link_to "新規登録", new_company_registration_path %> |
         <%= link_to "ログイン", new_company_session_path %>
-      <% end %>
+    <% end %>

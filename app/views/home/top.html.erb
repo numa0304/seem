@@ -3,6 +3,8 @@
 <span>学生</span>
 <%= link_to "新規登録", new_student_registration_path %> |
 <%= link_to "ログイン", new_student_session_path %>
+<%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
 <span>人事担当</span>
 <%= link_to "新規登録", new_company_registration_path %> |
 <%= link_to "ログイン", new_company_session_path %>
+<%= link_to "ログアウト", destroy_company_session_path, method: :delete %>

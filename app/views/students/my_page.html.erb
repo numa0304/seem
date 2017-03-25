@@ -1,0 +1,22 @@
+<h3>学生マイページ</h3>
+<%= current_student.name %>
+<%= current_student.grade %>
+<%= current_student.school %>
+<%= current_student.undergraduate %>
+<%= current_student.self_introduction %>
+<%= current_student.work_location %>
+<%= current_student.hobby %>
+<%= current_student.birthplace %>
+<%= current_student.job_category %>
+<%= current_student.circle %>
+<%= current_student.seminar %>
+<%= current_student.high_school %>
+<%= current_student.club %>
+<%= current_student.department %>
+<%= current_student.profile_image %>
+<%= current_student.birthday %>
+<%= current_student.part_time_job %>
+<%= link_to "プロフィール編集", edit_student_registration_path %>
+<%= link_to "新規投稿", '/posts/new' %>
+<%= qrcode_tag request.url, module_size: 5 %>
+<%= link_to "ログアウト", destroy_student_session_path, method: :delete %>

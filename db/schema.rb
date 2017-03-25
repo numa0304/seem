@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20170320065352) do
     t.datetime "updated_at",                          null: false
     t.string   "company_name"
     t.string   "human_resources"
+    t.string   "profile_image"
+    t.integer  "company_id"
     t.index ["email"], name: "index_companies_on_email", unique: true
     t.index ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true
   end
@@ -77,6 +79,7 @@ ActiveRecord::Schema.define(version: 20170320065352) do
     t.string   "department"
     t.string   "profile_image"
     t.date     "birthday"
+    t.integer  "student_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_students_on_email", unique: true

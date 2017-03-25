@@ -1,9 +1,14 @@
 <h1>新規投稿</h1>
-<%= form_for posts_path, :url => {:action => 'create'} do |f| %>
+<%= form_for (@post) do |f| %>
   <h2>本文</h2>
   <%= f.label :text %>
   <%= f.text_field :text %>
   <%= f.label :image %>
   <%= f.file_field :image %> 
   <%= f.submit "保存する" %>
+<% end %>
+<% if student_signed_in? %>
+  <%= link_to "戻る", students_mypage_path %>
+<% elsif company_signed_in? %>
+  <%= link_to "戻る", companies_mypage_path %>
 <% end %>
