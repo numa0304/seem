@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = current_student.posts.all
   end
 
   def edit   
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
 private
   def set_post
-    @post = Post.find(params[:id])
+    @post = current_student.posts.find(params[:id])
   end
 
   def post_params
