@@ -28,10 +28,11 @@
 </div>
 
 <% @posts.each do |post|%>
-    <%= post.text %>
     <% if post.image? %>
-    　<td><%= image_tag post.image.url %></td>
+        <%= link_to post_path(post) do %>
+        　<%= image_tag post.image.url %>
+        <% end %>
     <% else %>
-    　<td><%= image_tag 'noimage.gif' %></td>
+    　   <%= image_tag 'noimage.gif' %>
     <% end %>
 <% end %>
