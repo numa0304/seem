@@ -20,3 +20,13 @@
 <%= link_to "新規投稿", '/posts/new' %>
 <%= qrcode_tag request.url, module_size: 5 %>
 <%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
+
+
+<% @posts.each do |post|%>
+    <%= post.text %>
+    <% if post.image? %>
+    　<td><%= image_tag post.image.url %></td>
+    <% else %>
+    　<td><%= image_tag 'noimage.gif' %></td>
+    <% end %>
+<% end %>
