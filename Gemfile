@@ -25,7 +25,7 @@ gem 'rmagick'
 
 gem 'devise'
 gem 'rqrcode'
-
+gem 'ransack'
 
 gem 'foundation-rails'
 

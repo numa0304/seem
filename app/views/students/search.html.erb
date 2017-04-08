@@ -1,0 +1,5 @@
+<%= search_form_for @search do |f| %>
+  <%= f.label :name_start, "ユーザー検索" %>
+  <%= f.search_field :name_start %>
+  <%= f.submit %>
+<% end %>
