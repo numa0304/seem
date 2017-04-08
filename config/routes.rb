@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   # post '/students/posts' => 'posts#create'
   # get '/posts/new' => 'posts#new'
   # post '/posts' => 'posts#create'
+
   resources :posts
 
 end

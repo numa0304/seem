@@ -8,5 +8,10 @@ class StudentsController < ApplicationController
   def index
   	 @students = Student.all
   end
+  
+  def my_page
+      @user = Student.where(:id=> current_student.id)
+      @posts = Post.where(:student_id=> @user)
+  end
 
 end

@@ -39,7 +39,13 @@ ActiveRecord::Schema.define(version: 20170325104927) do
   end
 
   create_table "posts", force: :cascade do |t|
+<<<<<<< HEAD
+    t.string   "text"
+    t.integer  "student_id"
+    t.integer  "company_id"
+=======
     t.integer  "user_id"
+>>>>>>> c669f77835310a84b6325e75c260926aea77e188
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "text"

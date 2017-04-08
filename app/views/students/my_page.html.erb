@@ -26,3 +26,12 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
+
+<% @posts.each do |post|%>
+    <%= post.text %>
+    <% if post.image? %>
+    　<td><%= image_tag post.image.url %></td>
+    <% else %>
+    　<td><%= image_tag 'noimage.gif' %></td>
+    <% end %>
+<% end %>

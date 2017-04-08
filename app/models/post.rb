@@ -1,4 +1,4 @@
 class Post < ApplicationRecord
-	belongs_to :company
 	belongs_to :student
+	mount_uploader :image, ImageUploader
 end
