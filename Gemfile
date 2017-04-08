@@ -23,7 +23,7 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'devise'
 gem 'rqrcode'
-
+gem 'ransack'
 
 gem 'foundation-rails'
 
