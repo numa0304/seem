@@ -10,14 +10,13 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.save
-    redirect_to @post
+    redirect_to students_mypage_path(current_student.id)
   end
 
   def show
   end
 
   def index
-    @posts = Post.all
   end
 
   def edit   
@@ -28,19 +27,19 @@ class PostsController < ApplicationController
 
 private
   def set_post
-    @post = Post.find(params[:id])
+    @post = current_student.posts.find(params[:id])
   end
 
   def post_params
     params.require(:post).permit(:text, :image, :company_id, :student_id)
   end
 
-  def correct_company
-    post = Post.find(params[:id])
-    if current_company.id != post.company.id
-      redirect_to root_path
-    end
-  end
+  # def correct_company
+  #   post = Post.find(params[:id])
+  #   if current_company.id != post.company.id
+  #     redirect_to root_path
+  #   end
+  # end
 
   def correct_student
     post = Post.find(params[:id])
