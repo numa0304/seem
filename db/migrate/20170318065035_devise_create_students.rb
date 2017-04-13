@@ -48,6 +48,7 @@ class DeviseCreateStudents < ActiveRecord::Migration[5.0]
       t.string :department
       t.string :profile_image
       t.date :birthday
+      t.integer :student_id
 
       t.timestamps null: false
     end

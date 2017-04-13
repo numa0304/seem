@@ -1,0 +1,38 @@
+<h3>学生マイページ</h3>
+<%= current_student.name %>
+<%= current_student.grade %>
+<%= current_student.school %>
+<%= current_student.undergraduate %>
+<%= current_student.self_introduction %>
+<%= current_student.work_location %>
+<%= current_student.hobby %>
+<%= current_student.birthplace %>
+<%= current_student.job_category %>
+<%= current_student.circle %>
+<%= current_student.seminar %>
+<%= current_student.high_school %>
+<%= current_student.club %>
+<%= current_student.department %>
+<%= current_student.birthday %>
+<%= current_student.part_time_job %>
+<%= link_to "プロフィール編集", edit_student_registration_path %>
+<%= link_to "新規投稿", '/posts/new' %>
+<%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
+<p><a data-toggle="exampleModal8">QRコード</a></p>
+<div class="full reveal" id="exampleModal8" data-reveal>
+  <p>OH I'M SO FUUUUL</p>
+　<%= qrcode_tag request.url, module_size: 5 %>
+  <button class="close-button" data-close aria-label="Close reveal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<% @posts.each do |post|%>
+    <% if post.image? %>
+        <%= link_to post_path(post) do %>
+        　<%= image_tag post.image.url %>
+        <% end %>
+    <% else %>
+    　   <%= image_tag 'noimage.gif' %>
+    <% end %>
+<% end %>

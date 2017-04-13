@@ -1,0 +1,6 @@
+<h3>人事マイページ</h3>
+<%= current_company.company_name %>
+<%= current_company.human_resources %>
+<%= link_to "プロフィール編集", edit_company_registration_path %>
+<%= link_to "ログアウト", destroy_company_session_path, method: :delete %>
+<%= link_to "学生検索", students_search_path %>

@@ -7,7 +7,20 @@ class ApplicationController < ActionController::Base
  
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :gender ])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :grade, :school, :undergraduate, :self_introduction, :work_location, :hobby, :birthplace, :job_category, :circle, :seminar, :high_school, :part_time_job, :club, :department, :profile_image, :birthday])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :grade, :school, :undergraduate, :self_introduction, :work_location, :hobby, :birthplace, :job_category, :circle, :seminar, :high_school, :part_time_job, :club, :department, :image, :birthday])
+  end
+
+  def after_sign_out_path_for resource
+    root_path
+  end 
+ 
+  def after_sign_in_path_for(resource)
+    case resource
+    when Student
+      students_mypage_path
+    when Company
+      companies_mypage_path
+    end
   end
 
 

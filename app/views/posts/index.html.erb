@@ -1,0 +1,14 @@
+<h1>投稿一覧</h1>
+<tbody>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= @post.text %></td>
+    </tr>
+  <% end %>
+</tbody>
+
+<% if student_signed_in? %>
+  <%= link_to "戻る", students_mypage_path %>
+<% elsif company_signed_in? %>
+  <%= link_to "戻る", companies_mypage_path %>
+<% end %>

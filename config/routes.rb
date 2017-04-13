@@ -9,11 +9,18 @@ Rails.application.routes.draw do
   passwords:     'companies/passwords',
   registrations: 'companies/registrations'
 }
-  resources :posts
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "home#top"
-  resources :users
-  resources :posts
+  get '/students/mypage' => 'students#my_page'
+  get '/companies/mypage' => 'companies#my_page'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
+  get '/students/search' => 'students#search'
+  get '/students' => 'students#index'  
+  # get '/students/posts/new' => 'posts#new'
+  # post '/students/posts' => 'posts#create'
+  # get '/posts/new' => 'posts#new'
+  # post '/posts' => 'posts#create'
+
+  resources :posts
+
 end
