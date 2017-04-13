@@ -1,0 +1,16 @@
+<div class="new_post">
+	 <%= form_for (@post) do |f| %>
+	  <%= f.label :画像 %>
+	  <%= f.file_field :image %> 
+	  <%= f.label :説明 %>
+	  <%= f.text_field :text %>
+	  <%= f.hidden_field :student_id, value: current_student.id %>
+	  <%= f.submit "投稿する" %>
+	<% end %>
+</div>
+
+<% if student_signed_in? %>
+  <%= link_to "戻る", students_mypage_path %>
+<% elsif company_signed_in? %>
+  <%= link_to "戻る", companies_mypage_path %>
+<% end %>

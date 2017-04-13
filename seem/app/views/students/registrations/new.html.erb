@@ -1,0 +1,42 @@
+<h3 class="registrations_title">新規登録</h3>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :Eメール %>
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :名前 %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :性別 %>
+    <%= f.radio_button :gender, 1 %>男
+    <%= f.radio_button :gender, 2 %>女
+  </div>
+
+  <div class="field">
+    <%= f.label :パスワード %>
+    <% if @minimum_password_length %>
+    <em>(半角<%= @minimum_password_length %>文字以上)</em>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :パスワード確認 %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions submit">
+    <%= f.submit "登録" %>
+  </div>
+<% end %>
+
+<%= render "students/shared/links" %>
+
+<%= link_to "TOPに戻る", root_path %>

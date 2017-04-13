@@ -1,0 +1,13 @@
+<header>	
+	<p class="head_title">seem</p>
+	<p class="head_item">
+	<%= link_to "学生検索", students_search_path %>
+	<%= link_to "ログアウト", destroy_company_session_path, method: :delete %>
+	</p>
+</header>
+<div class="main_profiel">
+	<p class="company_name"><%= current_company.company_name %></p>
+	<p class="user_name"><%= current_company.human_resources %></p>
+	<p class="profiel_edit"><%= link_to "プロフィール編集", edit_company_registration_path %></p>
+</div>
+

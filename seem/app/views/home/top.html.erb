@@ -1,0 +1,16 @@
+
+<h1 class="top_title">seem</h1>
+<p class="sub_title">sub_title</p>
+<div class="session student_session">
+<p class="position">学生</p>
+<p class="sign_up student_sign_up"><%= link_to "新規登録", new_student_registration_path %></p>
+<p class="login studnt_login"><%= link_to "ログイン", new_student_session_path %></p>
+<!-- <%= link_to "ログアウト", destroy_student_session_path, method: :delete %> -->
+</div>
+
+<div class="session company_session">
+<p class="position">人事担当</p>
+<p class="sign_up resources_sign_up"><%= link_to "新規登録", new_company_registration_path %></p>
+<p class="login resources_login"><%= link_to "ログイン", new_company_session_path %></p>
+<!-- <%= link_to "ログアウト", destroy_company_session_path, method: :delete %> -->
+</div>

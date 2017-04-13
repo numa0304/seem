@@ -1,0 +1,40 @@
+<header>
+    <p><a data-toggle="exampleModal8">🔲</a></p>
+    <div class="full reveal" id="exampleModal8" data-reveal>
+        <p><a data-toggle="exampleModal8">close</a></p>
+        <p>QRコードを印刷してください</p>
+        <%= qrcode_tag request.url, module_size: 5 %>
+        <button class="close-button" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <p class="head_title">seem</p>
+    <p class="head_item">
+    <%= link_to "新規投稿", '/posts/new' %>
+    <%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
+    </p>
+</header>
+<div class="profiel">
+    <div class="main_profiel">
+        <p class="user_name"><%= current_student.name %></p>
+        <p class="profiel_edit"><%= link_to "プロフィール編集", edit_student_registration_path %></p>
+    </div>
+    <div class="sub_profiel">
+        <p class="sub_profiel_item"><%= current_student.grade %></p>
+        <p class="sub_profiel_item"><%= current_student.school %></p>
+        <p class="sub_profiel_item"><%= current_student.undergraduate %></p>
+        <p class="sub_profiel_item"><%= current_student.self_introduction %></p>
+        <p class="sub_profiel_item"><%= current_student.work_location %></p>
+        <p class="sub_profiel_item"><%= current_student.hobby %></p>
+        <p class="sub_profiel_item"><%= current_student.birthplace %></p>
+        <p class="sub_profiel_item"><%= current_student.job_category %></p>
+        <p class="sub_profiel_item"><%= current_student.circle %></p>
+        <p class="sub_profiel_item"><%= current_student.seminar %></p>
+        <p class="sub_profiel_item"><%= current_student.high_school %></p>
+        <p class="sub_profiel_item"><%= current_student.club %></p>
+        <p class="sub_profiel_item"><%= current_student.department %></p>
+        <p class="sub_profiel_item"><%= current_student.birthday %></p>
+        <p class="sub_profiel_item"><%= current_student.part_time_job %></p>
+    </div>
+</div>
+
