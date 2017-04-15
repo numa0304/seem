@@ -1,4 +1,4 @@
-<h2>プロフィール編集</h2>
+<div class="container">
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -79,11 +79,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :department %><br />
-    <%= f.text_field :department %>
-  </div>
-
-  <div class="field">
     <%= f.label :生年月日 %><br />
     <%= f.text_field :birthday %>
   </div>
@@ -95,7 +90,7 @@
 
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :パスワード %> <i></i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
   
@@ -105,4 +100,6 @@
   </div>
 <% end %>
 
-<%= link_to "Back", :back %>
+<%= link_to "戻る", :back %>
+
+</div>

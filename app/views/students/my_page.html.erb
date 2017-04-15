@@ -1,38 +1,56 @@
-<h3>学生マイページ</h3>
-<%= current_student.name %>
-<%= current_student.grade %>
-<%= current_student.school %>
-<%= current_student.undergraduate %>
-<%= current_student.self_introduction %>
-<%= current_student.work_location %>
-<%= current_student.hobby %>
-<%= current_student.birthplace %>
-<%= current_student.job_category %>
-<%= current_student.circle %>
-<%= current_student.seminar %>
-<%= current_student.high_school %>
-<%= current_student.club %>
-<%= current_student.department %>
-<%= current_student.birthday %>
-<%= current_student.part_time_job %>
-<%= link_to "プロフィール編集", edit_student_registration_path %>
-<%= link_to "新規投稿", '/posts/new' %>
-<%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
-<p><a data-toggle="exampleModal8">QRコード</a></p>
-<div class="full reveal" id="exampleModal8" data-reveal>
-  <p>OH I'M SO FUUUUL</p>
-　<%= qrcode_tag request.url, module_size: 5 %>
-  <button class="close-button" data-close aria-label="Close reveal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
+<div class="container">
+<header class="header">
+    <p><a data-toggle="exampleModal8" class="qr_btn">🔲</a></p>
+    <div class="full reveal" id="exampleModal8" data-reveal>
+        <p class="close"><a data-toggle="exampleModal8">close</a></p>
+        <p class="print_msg">QRコードを印刷してください</p>
+        <div class="qr_code"><%= qrcode_tag request.url, module_size: 7 %></div> 
+        <button class="close-button" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <p class="head_title">seem</p>
+    <p class="head_item">
+    <%= link_to "新規投稿", '/posts/new' %>
+    <%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
+    </p>
+</header>
+<div class="profiel">
+    <div class="main_profiel">
+        <p class="user_name"><%= current_student.name %></p>
+        <p class="profiel_edit"><%= link_to "プロフィール編集", edit_student_registration_path %></p>
+    </div>
+    <div class="sub_profiel">
+        <p class="sub_profiel_item"><%= current_student.grade %></p>
+        <p class="sub_profiel_item"><%= current_student.school %></p>
+        <p class="sub_profiel_item"><%= current_student.undergraduate %></p>
+        <p class="sub_profiel_item"><%= current_student.self_introduction %></p>
+        <p class="sub_profiel_item"><%= current_student.work_location %></p>
+        <p class="sub_profiel_item"><%= current_student.hobby %></p>
+        <p class="sub_profiel_item"><%= current_student.birthplace %></p>
+        <p class="sub_profiel_item"><%= current_student.job_category %></p>
+        <p class="sub_profiel_item"><%= current_student.circle %></p>
+        <p class="sub_profiel_item"><%= current_student.seminar %></p>
+        <p class="sub_profiel_item"><%= current_student.high_school %></p>
+        <p class="sub_profiel_item"><%= current_student.club %></p>
+        <p class="sub_profiel_item"><%= current_student.department %></p>
+        <p class="sub_profiel_item"><%= current_student.birthday %></p>
+        <p class="sub_profiel_item"><%= current_student.part_time_job %></p>
+    </div>
 </div>
 
+
+<div class="flex">
 <% @posts.each do |post|%>
     <% if post.image? %>
         <%= link_to post_path(post) do %>
+        <div class="flex_item">
         　<%= image_tag post.image.url %>
+        </div>
         <% end %>
     <% else %>
     　   <%= image_tag 'noimage.gif' %>
     <% end %>
 <% end %>
+</div>
+</div>

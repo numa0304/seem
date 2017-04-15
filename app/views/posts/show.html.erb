@@ -1,7 +1,13 @@
-<h2>SHOW</h2>
-    <% if @post.image? %>
-    　<td><%= image_tag @post.image.url %></td>
-    <% else %>
-    　<td><%= image_tag 'noimage.gif' %></td>
-    <% end %>
-    <%= @post.text %>
+
+<div class="show">
+	<div class="photo">
+		<% if @post.image? %>
+		　<td><%= image_tag @post.image.url %></td>
+		<% else %>
+		　<td><%= image_tag 'noimage.gif' %></td>
+		<% end %>
+	</div>
+	<div class="textarea">
+		<p class="text"><%= @post.text %></p> 
+	</div>
+</div>
