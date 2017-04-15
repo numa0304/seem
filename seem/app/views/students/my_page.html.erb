@@ -1,9 +1,10 @@
-<header>
-    <p><a data-toggle="exampleModal8">🔲</a></p>
+<div class="container">
+<header class="header">
+    <p><a data-toggle="exampleModal8" class="qr_btn">🔲</a></p>
     <div class="full reveal" id="exampleModal8" data-reveal>
-        <p><a data-toggle="exampleModal8">close</a></p>
-        <p>QRコードを印刷してください</p>
-        <%= qrcode_tag request.url, module_size: 5 %>
+        <p class="close"><a data-toggle="exampleModal8">close</a></p>
+        <p class="print_msg">QRコードを印刷してください</p>
+        <div class="qr_code"><%= qrcode_tag request.url, module_size: 7 %></div> 
         <button class="close-button" data-close aria-label="Close reveal" type="button">
         <span aria-hidden="true">&times;</span>
         </button>
@@ -38,3 +39,18 @@
     </div>
 </div>
 
+
+<div class="flex">
+<% @posts.each do |post|%>
+    <% if post.image? %>
+        <%= link_to post_path(post) do %>
+        <div class="flex_item">
+        　<%= image_tag post.image.url %>
+        </div>
+        <% end %>
+    <% else %>
+    　   <%= image_tag 'noimage.gif' %>
+    <% end %>
+<% end %>
+</div>
+</div>
