@@ -1,2 +1,12 @@
-<p>学生のみんな</p>
-
+<div class="container">
+	<%= search_form_for @search do |f| %>
+	    <%= f.label :name_cont, "ユーザー検索" %>
+		<%= f.search_field :name_cont %>
+		<%= f.submit %>
+	<% end %>
+	<%= link_to "戻る", companies_mypage_path %>
+	<p>検索結果</p>
+	<% @students.each do |student| %>
+	    <%= link_to student.name, "/students/#{student.id}" %>
+	<% end %>
+</div>

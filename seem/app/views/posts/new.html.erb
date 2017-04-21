@@ -1,26 +1,22 @@
 <div class="container">
-
- <div class="new_post">
- <p class="new_post_msg">画像を投稿しましょう</p>
-	 <%= form_for (@post) do |f| %>
-	 <div class="new_post_image">
-		  <%= f.label :画像 %>
-		  <%= f.file_field :image %> 
-	  </div>
-	  <div class="new_post_text">
-		  <%= f.label :説明 %>
-		  <%= f.text_field :text %>
-	  </div>
-		  <%= f.hidden_field :student_id, value: current_student.id %>
-		  <%= f.submit "投稿する" %>
-	<% end %>
-
-
-	<% if student_signed_in? %>
-	  <%= link_to "戻る", students_mypage_path %>
-	<% elsif company_signed_in? %>
-	  <%= link_to "戻る", companies_mypage_path %>
-	<% end %>
-</div>
-
+	<div class="new_post">
+	    <p class="new_post_msg">画像を投稿しましょう</p>
+		<%= form_for (@post) do |f| %>
+		    <div class="new_post_image">
+			    <%= f.label :画像 %>
+			    <%= f.file_field :image %> 
+		    </div>
+		    <div class="new_post_text">
+			    <%= f.label :説明 %>
+			    <%= f.text_field :text %>
+		    </div>
+			    <%= f.hidden_field :student_id, value: current_student.id %>
+			    <%= f.submit "投稿する" %>
+		<% end %>
+		<% if student_signed_in? %>
+		    <%= link_to "戻る", students_mypage_path %>
+		<% elsif company_signed_in? %>
+		    <%= link_to "戻る", companies_mypage_path %>
+		<% end %>
+	</div>
 </div>

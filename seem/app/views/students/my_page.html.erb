@@ -1,56 +1,43 @@
 <div class="container">
-<header class="header">
-    <p><a data-toggle="exampleModal8" class="qr_btn">🔲</a></p>
-    <div class="full reveal" id="exampleModal8" data-reveal>
-        <p class="close"><a data-toggle="exampleModal8">close</a></p>
-        <p class="print_msg">QRコードを印刷してください</p>
-        <div class="qr_code"><%= qrcode_tag request.url, module_size: 7 %></div> 
-        <button class="close-button" data-close aria-label="Close reveal" type="button">
-        <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <p class="head_title">seem</p>
-    <p class="head_item">
-    <%= link_to "新規投稿", '/posts/new' %>
-    <%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
-    </p>
-</header>
-<div class="profiel">
-    <div class="main_profiel">
-        <p class="user_name"><%= current_student.name %></p>
-        <p class="profiel_edit"><%= link_to "プロフィール編集", edit_student_registration_path %></p>
-    </div>
-    <div class="sub_profiel">
-        <p class="sub_profiel_item"><%= current_student.grade %></p>
-        <p class="sub_profiel_item"><%= current_student.school %></p>
-        <p class="sub_profiel_item"><%= current_student.undergraduate %></p>
-        <p class="sub_profiel_item"><%= current_student.self_introduction %></p>
-        <p class="sub_profiel_item"><%= current_student.work_location %></p>
-        <p class="sub_profiel_item"><%= current_student.hobby %></p>
-        <p class="sub_profiel_item"><%= current_student.birthplace %></p>
-        <p class="sub_profiel_item"><%= current_student.job_category %></p>
-        <p class="sub_profiel_item"><%= current_student.circle %></p>
-        <p class="sub_profiel_item"><%= current_student.seminar %></p>
-        <p class="sub_profiel_item"><%= current_student.high_school %></p>
-        <p class="sub_profiel_item"><%= current_student.club %></p>
-        <p class="sub_profiel_item"><%= current_student.department %></p>
-        <p class="sub_profiel_item"><%= current_student.birthday %></p>
-        <p class="sub_profiel_item"><%= current_student.part_time_job %></p>
-    </div>
-</div>
-
-
-<div class="flex">
-<% @posts.each do |post|%>
-    <% if post.image? %>
-        <%= link_to post_path(post) do %>
-        <div class="flex_item">
-        　<%= image_tag post.image.url %>
+    <header class="header">
+        <p class="change"><%= link_to "⇔", "/students/#{current_student.id}" %></p>
+        <p class="head_title">seem</p>
+        <p class="head_item">
+            <%= link_to "新規投稿", '/posts/new' %>
+            <%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
+        </p>
+    </header>
+    <div class="profiel">
+        <div class="main_profiel">
+            <p class="user_name"><%= current_student.name %></p>
+            <p class="profiel_edit"><%= link_to "プロフィール編集", edit_student_registration_path %></p>
         </div>
-        <% end %>
-    <% else %>
-    　   <%= image_tag 'noimage.gif' %>
-    <% end %>
-<% end %>
-</div>
+        <div class="sub_profiel">
+            <p class="sub_profiel_item">学年:<%= current_student.grade %></p>
+            <p class="sub_profiel_item">学校名:<%= current_student.school %></p>
+            <p class="sub_profiel_item">学部:<%= current_student.undergraduate %></p>
+            <p class="sub_profiel_item">自己紹介:<%= current_student.self_introduction %></p>
+            <p class="sub_profiel_item">希望勤務地:<%= current_student.work_location %></p>
+            <p class="sub_profiel_item">趣味:<%= current_student.hobby %></p>
+            <p class="sub_profiel_item">出身地:<%= current_student.birthplace %></p>
+            <p class="sub_profiel_item">希望職種:<%= current_student.job_category %></p>
+            <p class="sub_profiel_item">所属サークル:<%= current_student.circle %></p>
+            <p class="sub_profiel_item">所属ゼミ:<%= current_student.seminar %></p>
+            <p class="sub_profiel_item">出身高校:<%= current_student.high_school %></p>
+            <p class="sub_profiel_item">部活:<%= current_student.club %></p>
+            <p class="sub_profiel_item">生年月日:<%= current_student.birthday %></p>
+            <p class="sub_profiel_item">アルバイト歴:<%= current_student.part_time_job %></p>
+        </div>
+    </div>
+    <div class="flex">
+        <% @posts.each do |post|%>
+            <% if post.image? %>
+                <%= link_to post_path(post) do %>
+                    <p class="flex_item"><%= image_tag post.image.url(:thumb) %></p>
+                <% end %>
+           <% else %>
+        　     <%= image_tag 'noimage.gif' %>
+           <% end %>
+       <% end %>
+    </div>
 </div>

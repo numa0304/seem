@@ -46,7 +46,7 @@ class DeviseCreateStudents < ActiveRecord::Migration[5.0]
       t.string :part_time_job
       t.string :club
       t.string :department
-      t.string :profile_image
+      t.string :image
       t.date :birthday
       t.integer :student_id
 

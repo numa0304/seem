@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318065035) do
+ActiveRecord::Schema.define(version: 20170420122354) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20170318065035) do
   create_table "posts", force: :cascade do |t|
     t.string   "text"
     t.integer  "student_id"
-    t.integer  "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"

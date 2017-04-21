@@ -17,14 +17,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
  # 画像の上限を200pxにする
-   process :resize_to_limit => [250, 250]
+   process :resize_to_limit => [450, 450]
 
   # 保存形式をJPGにする
   process :convert => 'jpg'
 
   # サムネイルを生成する設定
    version :thumb do
-     process :resize_to_fill => [40, 40, gravity = ::Magick::CenterGravity]
+     process :resize_to_fill => [250, 250, gravity = ::Magick::CenterGravity]
    end
 
   # jpg,jpeg,gif,pngしか受け付けない

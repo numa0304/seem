@@ -7,7 +7,9 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+
   def create
+    # binding.pry
     @post = Post.new(post_params)
     @post.save
     redirect_to students_mypage_path(current_student.id)
@@ -19,10 +21,16 @@ class PostsController < ApplicationController
   def index
   end
 
-  def edit   
+  def edit
   end
 
   def update
+  end
+
+  def destroy
+     @posts = Post.find(params[:id])
+     @posts.destroy
+     redirect_to students_mypage_path 
   end
 
 private
@@ -31,7 +39,7 @@ private
   end
 
   def post_params
-    params.require(:post).permit(:text, :image, :company_id, :student_id)
+    params.require(:post).permit(:text, :image, :student_id)
   end
 
   # def correct_company

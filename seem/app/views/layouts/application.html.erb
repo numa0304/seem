@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title><%= content_for?(:title) ? yield(:title) : "seem" %></title>
-
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -13,8 +11,8 @@
 
   <body>
     <%= yield %>
-     <footer class="container">
-      <p class="copyright">Copyright© numa All Rights Reserved.</p>
+    <footer>
+        <p class="copyright">Copyright© numa All Rights Reserved.</p>
     </footer>
   </body>
 </html>
