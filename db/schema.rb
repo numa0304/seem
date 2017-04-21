@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318065035) do
+ActiveRecord::Schema.define(version: 20170421130517) do
+
+  create_table "chats", force: :cascade do |t|
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -36,6 +42,12 @@ ActiveRecord::Schema.define(version: 20170318065035) do
   create_table "images", force: :cascade do |t|
     t.string   "url"
     t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

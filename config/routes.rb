@@ -26,4 +26,6 @@ Rails.application.routes.draw do
   resources :posts
   get 'rooms/show' => 'rooms#show'
 
+  mount ActionCable.server => '/cable'
+
 end
