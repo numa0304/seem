@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'rooms/show'
+
   devise_for :students,controllers: {
 	  sessions:      'students/sessions',
 	  passwords:     'students/passwords',
@@ -22,5 +24,6 @@ Rails.application.routes.draw do
   # post '/posts' => 'posts#create'
 
   resources :posts
+  get 'rooms/show' => 'rooms#show'
 
 end
