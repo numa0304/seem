@@ -19,6 +19,7 @@
     <div class="main_profiel">
         <p class="user_name"><%= current_student.name %></p>
         <p class="profiel_edit"><%= link_to "プロフィール編集", edit_student_registration_path %></p>
+        <p class="chat_room"><%= link_to "Let's Talk", 'rooms/show' %></p>
     </div>
     <div class="sub_profiel">
         <p class="sub_profiel_item"><%= current_student.grade %></p>

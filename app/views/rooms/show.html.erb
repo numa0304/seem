@@ -1,10 +1,22 @@
-<h1>Chat room</h1>
+<div class="container">
+<header class="header">
+	<h1 class="chat_title">Chat room</h1>
 
-<div id="chats">
-  <%= render @chats %>
-</div>
+	<div class="chat_container">
+		<div class="chat_area">
+			<div id="chats">
+			  <%= render @chats %>
+			</div>
+			<form>
+			  <input type="text" data-behavior="room_speaker" placeholder="メッセージを入力" class="field">
+			</form>
+		</div>
+	</div>
+</header>
 
-<form>
-  <label>Say something:</label><br>
-  <input type="text" data-behavior="room_speaker">
-</form>
+<% if student_signed_in? %>
+  <%= link_to "戻る", students_mypage_path %>
+<% elsif company_signed_in? %>
+  <%= link_to "戻る", companies_mypage_path %>
+<% end %>
+</dir>

@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 	  registrations: 'students/registrations'
 	}
   devise_for :companies, controllers: {
-  sessions:      'companies/sessions',
-  passwords:     'companies/passwords',
-  registrations: 'companies/registrations'
+    sessions:      'companies/sessions',
+    passwords:     'companies/passwords',
+    registrations: 'companies/registrations'
 }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "home#top"
@@ -24,8 +24,8 @@ Rails.application.routes.draw do
   # post '/posts' => 'posts#create'
 
   resources :posts
-  get 'rooms/show' => 'rooms#show'
-
+  get 'students/rooms/show' => 'rooms#show'
+  get 'companies/rooms/show' => 'rooms#show'
   mount ActionCable.server => '/cable'
 
 end

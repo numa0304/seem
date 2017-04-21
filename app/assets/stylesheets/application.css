@@ -68,7 +68,8 @@ a {
 
 
 .top_title,
-.sub_title {
+.sub_title,
+.chat_title {
 	text-align: center;
 }
 
@@ -189,7 +190,8 @@ a {
 	font-size: 40px;
 }
 
-.profiel_edit {
+.profiel_edit,
+.chat_room {
 	display: inline-block;
 	margin: -65px 0 10px 10px;
 	padding: 5px;
@@ -255,3 +257,8 @@ a {
 	font-size: 20px;
 }
 
+/* chat_room */
+
+#chats {
+	text-align: center;
+}
