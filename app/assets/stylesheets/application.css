@@ -114,7 +114,8 @@ a {
 .introduction {
     background-image: url("http://st.depositphotos.com/1483427/5153/i/950/depositphotos_51537141-stock-photo-qr-code-dice-background.jpg");
 }
-.intro_area {
+.intro_area,
+.chat_area_item {
 	display: inline-block;
 	width: 60%;
 	margin: 70px 0 50px 250px;
@@ -257,7 +258,6 @@ a {
 /* show */
 
 .show {
-	height: 100vh;
 	background-color: rgba(50,50,50,.98);
 }
 
@@ -292,4 +292,27 @@ a {
 /* chat_room */
 .chat_area {
 	text-align: center;
+	background-color: #87ceeb;
+}
+
+.msg_form {
+	padding: 10px;
+}
+
+.chat_title {
+	color: white;
+}
+
+.chat_area_item {
+	display: inline-block;
+	width: 75%;
+	margin: 70px 0 50px 50px;
+	padding: 10px;
+	background-color: rgba(240,240,240,.7);
+	border-radius: 10px;
+}
+
+/* プロフィール編集 */
+.modoru {
+	margin: 0 0 60px 70px;
 }

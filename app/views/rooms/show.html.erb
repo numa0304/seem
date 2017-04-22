@@ -3,18 +3,18 @@
 <header class="header">	
 	<div class="chat_area">
 		<h1 class="chat_title">Chat room</h1>
-		<div id="chats">
+		<div id="chats", class="chat_area_item">
 		  <%= render @chats %>
 		</div>
-		<form>
+		<form class="msg_form">
 		  <input type="text" data-behavior="room_speaker" placeholder="メッセージを入力" class="field">
 		</form>
 	</div>
 	<div class="field">
 		<% if student_signed_in? %>
-		  	<div class="return"><%= link_to "戻る", students_mypage_path %></div>
+		  	<div class="chat_modoru"><%= link_to "戻る", students_mypage_path %></div>
 		<% elsif company_signed_in? %>
-		  	<div class="return"><%= link_to "戻る", companies_mypage_path %></div>
+		  	<div class="chat_modoru"><%= link_to "戻る", companies_mypage_path %></div>
 		<% end %>
 	</div>
 </header>
