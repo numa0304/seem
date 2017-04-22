@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   get '/students/mypage' => 'students#my_page'
   get '/companies/mypage' => 'companies#my_page'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/students/search' => 'students#search'
-  get '/students' => 'students#index'  
+  get '/students' => 'students#index'
+  get '/students/:id' => 'students#show'
   # get '/students/posts/new' => 'posts#new'
   # post '/students/posts' => 'posts#create'
   # get '/posts/new' => 'posts#new'

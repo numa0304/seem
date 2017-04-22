@@ -1,17 +1,14 @@
 
 <div class="container">
-<header class="header">
-	<h1 class="chat_title">Chat room</h1>
-
-	<div id="demo">
-		<div class="chat_area">
-			<div id="chats">
-			  <%= render @chats %>
-			</div>
-			<form>
-			  <input type="text" data-behavior="room_speaker" placeholder="メッセージを入力" class="field">
-			</form>
+<header class="header">	
+	<div class="chat_area">
+		<h1 class="chat_title">Chat room</h1>
+		<div id="chats">
+		  <%= render @chats %>
 		</div>
+		<form>
+		  <input type="text" data-behavior="room_speaker" placeholder="メッセージを入力" class="field">
+		</form>
 	</div>
 	<div class="field">
 		<% if student_signed_in? %>
