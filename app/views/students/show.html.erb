@@ -1,0 +1,51 @@
+<div class="container">
+    <header class="header">
+        <p><a data-toggle="exampleModal8" class="qr_btn">🔲</a></p>
+        <div class="full reveal" id="exampleModal8" data-reveal>
+            <p class="close"><a data-toggle="exampleModal8">close</a></p>
+            <p class="print_msg">QRコードを印刷してください</p>
+            <div class="qr_code"><%= qrcode_tag request.url, module_size: 7 %></div> 
+            <button class="close-button" data-close aria-label="Close reveal" type="button">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <p class="head_title">seem</p>
+            <p class="head_item">
+                    <%= link_to "戻る", :back %>
+            </p>
+    </header>
+    <div class="profiel">
+        <div class="main_profiel">
+            <p class="user_name"><%= @student.name %></p>
+        </div>
+        <div class="sub_profiel">
+            <p class="sub_profiel_item">学年:<%= @student.grade %></p>
+            <p class="sub_profiel_item">学校名:<%= @student.school %></p>
+            <p class="sub_profiel_item">学部:<%= @student.undergraduate %></p>
+            <p class="sub_profiel_item">自己紹介:<%= @student.self_introduction %></p>
+            <p class="sub_profiel_item">希望勤務地:<%= @student.work_location %></p>
+            <p class="sub_profiel_item">趣味:<%= @student.hobby %></p>
+            <p class="sub_profiel_item">出身地:<%= @student.birthplace %></p>
+            <p class="sub_profiel_item">希望職種:<%= @student.job_category %></p>
+            <p class="sub_profiel_item">所属サークル:<%= @student.circle %></p>
+            <p class="sub_profiel_item">所属ゼミ:<%= @student.seminar %></p>
+            <p class="sub_profiel_item">出身高校:<%= @student.high_school %></p>
+            <p class="sub_profiel_item">部活:<%= @student.club %></p>
+            <p class="sub_profiel_item">生年月日:<%= @student.birthday %></p>
+            <p class="sub_profiel_item">アルバイト歴:<%= @student.part_time_job %></p>
+        </div>
+        <div class="flex">
+            <% @student.posts.each do |post|%>
+                <% if post.image? %>
+                    <%= link_to post_path(post) do %>
+                        <div class="flex_item">
+                　          <%= image_tag post.image.url(:thumb) %>
+                        </div>
+                    <% end %>
+                <% else %>
+            　      <%= image_tag 'noimage.gif' %>
+                <% end %>
+            <% end %>
+         </div>
+    </div>
+</div>

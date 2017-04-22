@@ -1,0 +1,22 @@
+
+<div class="container">
+<header class="header">	
+	<div class="chat_area">
+		<h1 class="chat_title">Chat room</h1>
+		<div id="chats">
+		  <%= render @chats %>
+		</div>
+		<form>
+		  <input type="text" data-behavior="room_speaker" placeholder="メッセージを入力" class="field">
+		</form>
+	</div>
+	<div class="field">
+		<% if student_signed_in? %>
+		  	<div class="return"><%= link_to "戻る", students_mypage_path %></div>
+		<% elsif company_signed_in? %>
+		  	<div class="return"><%= link_to "戻る", companies_mypage_path %></div>
+		<% end %>
+	</div>
+</header>
+</div>
+

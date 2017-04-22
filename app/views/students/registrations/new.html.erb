@@ -1,50 +1,41 @@
 <div class="container">
-<p class="form_title">学生新規登録</p>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :Eメール %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :名前 %><br />
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :性別 %>
-    <%= f.radio_button :gender, 1 %>男
-    <%= f.radio_button :gender, 2 %>女<br />
-  </div>
-
-  <div class="field">
-    <%= f.label :パスワード %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %>文字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :パスワード確認 %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "登録" %>
-  </div>
-<% end %>
-<div class="links">
-  <div class="link">
-  <%= render "students/shared/links" %>
-  </div>
-
-  <div class="return">
-  <%= link_to "TOPに戻る", root_path %> 
-  </div>
-</div>
-
+    <p class="form_title">学生新規登録</p>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="field">
+            <%= f.label :Eメール %><br />
+            <%= f.email_field :email, autofocus: true %>
+        </div>
+        <div class="field">
+            <%= f.label :名前 %><br />
+            <%= f.text_field :name %>
+        </div>
+        <div class="field">
+            <%= f.label :性別 %>
+            <%= f.radio_button :gender, 1 %>男
+            <%= f.radio_button :gender, 2 %>女<br />
+        </div>
+        <div class="field">
+            <%= f.label :パスワード %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %>文字以上)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+        <div class="field">
+            <%= f.label :パスワード確認 %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+        <div class="actions">
+            <%= f.submit "登録" %>
+        </div>
+    <% end %>
+    <div class="links">
+        <div class="link">
+            <%= render "students/shared/links" %>
+        </div>
+        <div class="return">
+            <%= link_to "TOPに戻る", root_path %> 
+        </div>
+    </div>
 </div>
