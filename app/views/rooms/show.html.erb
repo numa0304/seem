@@ -1,8 +1,9 @@
+
 <div class="container">
 <header class="header">
 	<h1 class="chat_title">Chat room</h1>
 
-	<div class="chat_container">
+	<div id="demo">
 		<div class="chat_area">
 			<div id="chats">
 			  <%= render @chats %>
@@ -12,11 +13,13 @@
 			</form>
 		</div>
 	</div>
+	<div class="field">
+		<% if student_signed_in? %>
+		  	<div class="return"><%= link_to "戻る", students_mypage_path %></div>
+		<% elsif company_signed_in? %>
+		  	<div class="return"><%= link_to "戻る", companies_mypage_path %></div>
+		<% end %>
+	</div>
 </header>
+</div>
 
-<% if student_signed_in? %>
-  <%= link_to "戻る", students_mypage_path %>
-<% elsif company_signed_in? %>
-  <%= link_to "戻る", companies_mypage_path %>
-<% end %>
-</dir>
