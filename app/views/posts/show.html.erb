@@ -1,7 +1,19 @@
-<h2>SHOW</h2>
-    <% if @post.image? %>
-    　<td><%= image_tag @post.image.url %></td>
+
+<div class="show">
+    <div class="photo">
+	    <% if @post.image? %>
+		    <td><%= image_tag @post.image.url %></td>
+		<% else %>
+		　  <td><%= image_tag 'noimage.gif' %></td>
+		<% end %>
+	</div>
+	<div class="textarea">
+	    <p class="text"><%= @post.text %></p>
+	</div>
+    <% if student_signed_in? %>	
+	    <p class="show_link delete"><%= link_to "削除", post_path(@post.id), method: :delete %></p>
+	    <p class="show_link back"><%= link_to "戻る", :back %></p>
     <% else %>
-    　<td><%= image_tag 'noimage.gif' %></td>
+        <p class="show_link back"><%= link_to "戻る", :back %></p>
     <% end %>
-    <%= @post.text %>
+</div>

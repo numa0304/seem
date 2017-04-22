@@ -1,10 +1,30 @@
-
-<h1>seem</h1>
-<span>学生</span>
-<%= link_to "新規登録", new_student_registration_path %> |
-<%= link_to "ログイン", new_student_session_path %>
-<%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
-<span>人事担当</span>
-<%= link_to "新規登録", new_company_registration_path %> |
-<%= link_to "ログイン", new_company_session_path %>
-<%= link_to "ログアウト", destroy_company_session_path, method: :delete %>
+<div class="container">
+	<p class="top_title">seem</p>
+	<p class="sub_title">〜面接に革新を〜</p>
+	<div class="new_user">
+		<div class="session student_session">
+			<p class="position">学生</p>
+			<p class="sign_up student_sign_up"><%= link_to "新規登録", new_student_registration_path %></p>
+			<p class="login studnt_login"><%= link_to "ログイン", new_student_session_path %></p>
+		</div>
+		<div class="session company_session">
+			<p class="position">人事担当</p>
+			<p class="sign_up resources_sign_up"><%= link_to "新規登録", new_company_registration_path %></p>
+			<p class="login resources_login"><%= link_to "ログイン", new_company_session_path %></p>
+		</div>
+	</div>
+	<div class="introduction">
+		<div class="intro_area">
+		    <p class="intro_title">seemとは?</p>
+			<p class="intro_text">実績や職歴がない学生の就職活動を、画像の力でサポートします。 <br>
+				学生時代にやってきたこと(サークル・学生団体・部活・インターン)の画像をマイページに投稿し、 <br> オリジナルのアルバムを面接官に見ていただきましょう。</p>
+		</div>
+		<div class="intro_area">
+			<p class="intro_title">使い方</p>
+			<p class="intro_text">1. seemに登録する</p>
+			<p class="intro_text">2. 画像を投稿！</p>
+			<p class="intro_text">3. QRコードを印刷し、履歴書もしくはESに貼る</p>
+			<p class="intro_text">4. seemを使っている面接官にQRコードを読み取ってもらう</p>
+		</div>
+	</div>
+</div>

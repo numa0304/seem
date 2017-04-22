@@ -15,3 +15,304 @@
  *= require foundation_and_overrides
 
  */
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.5s;
+}
+
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.container {
+	padding-top: 60px;
+}
+
+
+.copyright {
+	position: fixed;
+	bottom: 0;
+	margin: 0 auto;
+	width: 100%;
+	background-color: white;
+	text-align: center;
+	font-size: 10px;
+}
+
+
+/* top */
+
+
+
+.top_title,
+.sub_title {
+	text-align: center;
+}
+
+.top_title {
+	padding-top: 135px;
+	font-size: 110px;
+}
+
+.sub_title {
+	font-size: 40px;
+}
+
+.session {
+	display: inline-block;
+	height:105px;
+	width: 40%;
+	margin: 50px 0 150px 82px;
+	background-color: rgba(200,200,200,0.3);
+	border-radius: 20px;
+	text-align: center;
+}
+
+.session:hover {
+	background-color: rgba(200,200,200,.8);
+}
+
+.position {
+	padding: 5px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.sign_up,
+.login {
+	display: inline-block;
+    margin: 5px;
+    padding: 0 25px 0 25px;
+}
+
+.sign_up:hover, .login:hover {
+	background-color: rgba(230,230,230,.8);
+	border-radius: 15px;
+	font-color: white;
+}
+
+.introduction {
+    background-image: url("http://st.depositphotos.com/1483427/5153/i/950/depositphotos_51537141-stock-photo-qr-code-dice-background.jpg");
+}
+.intro_area,
+.chat_area_item {
+	display: inline-block;
+	width: 60%;
+	margin: 70px 0 50px 250px;
+	padding: 10px;
+	background-color: rgba(250,250,250,.92);
+	border-radius: 10px;
+}
+
+.intro_title {
+	text-align: center;
+	font-size: 30px;
+}
+
+.intro_text {
+	text-align: center;
+}
+
+
+/* 学生新規登録 */
+.form_title {
+	padding: 40px;
+	text-align: center;
+	font-size: 25px;
+}
+
+.field,.actions {
+	margin: 60px auto;
+	text-align: center;
+}
+
+.field {
+	width: 30%;
+}
+
+.links {
+	margin: 15px auto;
+	text-align: center;
+}
+
+
+/* 学生マイページ */
+
+
+.qr_btn {
+	display: inline-block;
+	margin: 40px 0 0 70px;
+	padding: 5px 10px 0 10px;
+	font-size: 30px;
+	border: solid 8px black;
+}
+
+.change {
+	display: inline-block;
+	margin: 40px 0 0 70px;
+	padding: 5px 10px 0 10px;
+	font-size: 50px;
+}
+
+.head_title {
+    margin: -50px auto 0 auto;
+	text-align: center;
+	font-size: 60px;
+}
+
+.head_item {
+	display: inline-block;
+	margin: -100px 30px 5px 1040px;
+}
+
+.profiel {
+	padding-top: 50px;
+	border-top: solid 2px silver;  
+}
+
+.user_name {
+	display: inline-block;
+	margin: 40px 0 0 250px;
+	font-size: 40px;
+}
+
+.profiel_edit,
+.chat_room {
+	display: inline-block;
+	margin: -65px 0 10px 10px;
+	padding: 5px;
+	border-radius: 10px;
+	border: solid 1px silver;
+}
+
+.sub_profiel {
+	padding: 15px 10px 0 10px;
+	margin: 10px 15px 20px 15px;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.sub_profiel_item {
+	display: inline-block;
+}
+
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+	width: 80%;
+	margin: 5px auto 100px auto;
+    
+}
+
+.flex_item {
+    height:200px;
+    width:200px;
+    margin: 23px;
+    text-align: center;
+}
+
+.print_msg,
+.qr_code {
+	margin: 80px auto;
+	text-align: center;
+}
+/* 投稿 */
+
+.new_post {
+	width: 70%;
+	margin: 0 auto;
+	padding-bottom: 120px;
+}
+
+.new_post_msg {
+	text-align: center;
+	font-size: 30px;
+	padding-top: 50px;
+}
+
+.new_post_image,
+.new_post_text {
+	margin: 60px auto;
+}
+
+/* show */
+
+.show {
+	background-color: rgba(50,50,50,.98);
+}
+
+.show_link {
+	display: inline-block;
+	margin: 20px 0 20px 50px;
+	padding: 7px 20px 7px 20px;
+	border-radius:15px;
+	background-color: rgba(250,250,250,.3);
+	color: white;
+}
+
+.delete {
+	margin-left: 100px;
+}
+
+.back {
+	margin-left: 930px;
+}
+
+.photo {
+	padding: 85px;
+	text-align: center;
+}
+
+.text {
+	text-align: center;
+	color: white;
+	font-size: 20px;
+}
+
+/* chat_room */
+.chat_area {
+	text-align: center;
+	background-color: #87ceeb;
+}
+
+.msg_form {
+	padding: 10px;
+}
+
+.chat_title {
+	color: white;
+}
+
+.chat_area_item {
+	display: inline-block;
+	width: 75%;
+	margin: 70px 0 50px 50px;
+	padding: 10px;
+	background-color: rgba(240,240,240,.7);
+	border-radius: 10px;
+}
+
+/* プロフィール編集 */
+.modoru {
+	margin: 0 0 60px 70px;
+}
