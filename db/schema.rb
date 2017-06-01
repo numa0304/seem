@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 20170601090421) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"
-    t.string   "title"
   end
 
   create_table "students", force: :cascade do |t|
